@@ -4,4 +4,11 @@ from . import views
 urlpatterns = [
     path('customers/', views.customer_list, name='customer_list'),
     ]
-    
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.home, name='home'),
+            path('about/', views.about, name='about'),
+            ]
+            
