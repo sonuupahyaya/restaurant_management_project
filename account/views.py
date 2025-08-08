@@ -18,3 +18,16 @@ def customer_list(request):
                                             'restaurant_name': restaurant_name
                                                 })
                                                 
+ from django.shortcuts import render                                               
+ from .models import Restaurant
+
+ # Homepage view
+ def home(request):
+     restaurant = Restaurant.objects.first()
+         return render(request, 'home/index.html', {'restaurant': restaurant})
+
+         # About page view
+         def about(request):
+             restaurant = Restaurant.objects.first()
+                 return render(request, 'home/about.html', {'restaurant': restaurant})
+                 
