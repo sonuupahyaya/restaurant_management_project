@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - {{ restaurant.name }}</title>
+    </head>
+    <body>
+        <nav>
+                <a href="{% url 'home' %}">Home</a> |
+                        <a href="{% url 'about' %}">About</a>
+                            </nav>
+
+                                <h1>About {{ restaurant.name }}</h1>
+                                    <p>{{ restaurant.description }}</p>
+
+                                        {% if restaurant.image %}
+                                                <img src="{{ restaurant.image.url }}" alt="{{ restaurant.name }}" width="300">
+                                                    {% endif %}
+                                                    </body>
+                                                    </html>
+                                                    
