@@ -1,7 +1,7 @@
 
     # home/views.py
     from django.http import HttpResponse
-
+    from django.shortcuts import render
     def homepage(request):
         return HttpResponse("""
                 <html>
@@ -21,3 +21,5 @@
                </body>
              </html>
               """)
+    def home_view(request):
+        return render(request, "home.html")
