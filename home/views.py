@@ -23,3 +23,15 @@
               """)
     def home_view(request):
         return render(request, "home.html")
+
+    def contact_us(request):    
+            """
+            Render the Contact Us page with hardcoded contact details.
+            """
+            contact_info = {
+                "company_name": "Delicious Bites Restaurant",
+                "phone": "+91 98765 43210",
+                "email": "contact@deliciousbites.com",
+                "address": "123 Main Street, Mumbai, India"
+            }
+            return render(request, "contact_us.html", {"contact": contact_info})
