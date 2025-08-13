@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add your restaurant name here
 RESTAURANT_NAME = "TableTrek Delight"
+RESTAURANT_PHONE = "+919909939393"
