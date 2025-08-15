@@ -2,6 +2,7 @@
     # home/views.py
     from django.http import HttpResponse
     from django.shortcuts import render
+    from import datetime import datetime
     def homepage(request):
         return HttpResponse("""
                 <html>
@@ -35,3 +36,10 @@
                 "address": "123 Main Street, Mumbai, India"
             }
             return render(request, "contact_us.html", {"contact": contact_info})
+
+def home(request):
+    return render(request, "home.html", {
+            "restaurant_name": "My Restaurant",
+                    "phone_number": "+91 98765 43210",
+                            "current_year": datetime.now().year
+                                })
