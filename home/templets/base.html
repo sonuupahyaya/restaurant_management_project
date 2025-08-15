@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{% block title %}Restaurant{% endblock %}</title>
+                <style>
+                        /* Global styles */
+                                body {
+                                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                                        background-color: #fff8f0;
+                                                                    color: #333;
+                                                                                margin: 0;
+                                                                                            padding: 0;
+                                                                                                        min-height: 100vh;
+                                                                                                                    display: flex;
+                                                                                                                                flex-direction: column;
+                                                                                                                                        }
+
+                                                                                                                                                .container {
+                                                                                                                                                            flex: 1;
+                                                                                                                                                                        max-width: 800px;
+                                                                                                                                                                                    margin: 0 auto;
+                                                                                                                                                                                                padding: 20px;
+                                                                                                                                                                                                            text-align: center;
+                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                            footer {
+                                                                                                                                                                                                                                        background-color: #e85d04;
+                                                                                                                                                                                                                                                    color: white;
+                                                                                                                                                                                                                                                                text-align: center;
+                                                                                                                                                                                                                                                                            padding: 10px;
+                                                                                                                                                                                                                                                                                        margin-top: auto;
+                                                                                                                                                                                                                                                                                                    font-size: 0.9rem;
+                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                </style>
+                                                                                                                                                                                                                                                                                                                </head>
+                                                                                                                                                                                                                                                                                                                <body>
+
+                                                                                                                                                                                                                                                                                                                    <div class="container">
+                                                                                                                                                                                                                                                                                                                            {% block content %}{% endblock %}
+                                                                                                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                                                                                                    <footer>
+                                                                                                                                                                                                                                                                                                                                            &copy; {{ current_year }} {{ restaurant_name }}. All rights reserved.
+                                                                                                                                                                                                                                                                                                                                                </footer>
+
+                                                                                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                                                                                </html>
+                                                                                                                                                                                                                                                                                                                                                
