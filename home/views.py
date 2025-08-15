@@ -43,3 +43,10 @@ def home(request):
                     "phone_number": "+91 98765 43210",
                             "current_year": datetime.now().year
                                 })
+
+def reservations(request):
+    return render(request, "reservations.html", {
+            "restaurant_name": "My Restaurant",
+                    "phone_number": "+91 98765 43210",
+                            "current_year": datetime.now().year
+                                })
