@@ -39,9 +39,42 @@
         a.button:hover {
             background-color: #e5533f;
         }
+        body {}
+                    font-family: Arial, sans-serif;
+                                background-color: #fdfdfd;
+                                            text-align: center;
+                                                        padding: 20px;
+                                                                }
+                                                                        .logo {
+                                                                                    max-width: 200px;
+                                                                                                margin: 20px auto;
+                                                                                                            display: block;
+                                                                                                                    }
+                                                                                                                            h1 {
+                                                                                                                                        color: #ff6600;
+                                                                                                                                                    margin-bottom: 10px;
+                                                                                                                                                            }
+                                                                                                                                                                    p {
+                                                                                                                                                                                font-size: 18px;
+                                                                                                                                                                                            color: #555;
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                            .phone {
+                                                                                                                                                                                                                        font-weight: bold;
+                                                                                                                                                                                                                                    color: #333;
+                                                                                                                                                                                                                                            }
     </style>
  </head>
  <body>
+
+ <img src="{% static 'images/logo.png' %}" alt="{{ restaurant_name }} Logo" class="logo">
+
+     <h1>Welcome to {{ restaurant_name }}</h1>
+         <p>Your favorite place for delicious food and warm hospitality.</p>
+             <p>Call us at <span class="phone">{{ phone_number }}</span> for reservations or inquiries.</p>
+             
+
+
+
       <header>
            Welcome to Our Restaurant Management System
       </header>
