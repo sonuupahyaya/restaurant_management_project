@@ -146,6 +146,18 @@ background-color: #d00000;
 <a href="/menu/" class="btn">View Menu</a>
  </div>
 
+{% extends "base.html" %}
+
+{% block title %}{{ restaurant_name }} - Home{% endblock %}
+
+{% block content %}
+    <img src="{% static 'images/logo.png' %}" alt="{{ restaurant_name }} Logo" style="max-width:180px; margin:20px auto; display:block;">
+        <h1>Welcome to {{ restaurant_name }}</h1>
+            <p>Your favorite place for delicious food and warm hospitality.</p>
+                <p>Call us at <span style="font-weight:bold; color:#6a040f;">{{ phone_number }}</span> for reservations or inquiries.</p>
+                    <a href="/menu/" style="display:inline-block; background-color:#e85d04; color:white; padding:10px 20px; margin-top:20px; border-radius:5px; text-decoration:none; font-weight:bold;">View Menu</a>
+                    {% endblock %}
+                    
 
       <header>
            Welcome to Our Restaurant Management System
