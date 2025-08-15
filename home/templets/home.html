@@ -41,27 +41,86 @@
         }
         body {}
                     font-family: Arial, sans-serif;
-                                background-color: #fdfdfd;
-                                            text-align: center;
-                                                        padding: 20px;
-                                                                }
-                                                                        .logo {
-                                                                                    max-width: 200px;
-                                                                                                margin: 20px auto;
-                                                                                                            display: block;
-                                                                                                                    }
-                                                                                                                            h1 {
-                                                                                                                                        color: #ff6600;
-                                                                                                                                                    margin-bottom: 10px;
-                                                                                                                                                            }
-                                                                                                                                                                    p {
-                                                                                                                                                                                font-size: 18px;
-                                                                                                                                                                                            color: #555;
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                            .phone {
-                                                                                                                                                                                                                        font-weight: bold;
-                                                                                                                                                                                                                                    color: #333;
-                                                                                                                                                                                                                                            }
+                    background-color: #fdfdfd;
+                    text-align: center;
+                    padding: 20px;
+        }
+   .logo {
+         max-width: 200px;
+         margin: 20px auto;
+         display: block;
+        }
+    h1 {
+        color: #ff6600;
+        margin-bottom: 10px;
+       }
+    p {
+       font-size: 18px;
+       color: #555;
+      }
+     .phone {
+     font-weight: bold;
+     color: #333;
+     }
+
+     body {}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    ackground-color: #fff8f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    }
+
+   /* Container */
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    }
+
+    /* Logo styling */
+    .logo {
+     max-width: 180px;
+     margin: 20px auto;
+     display: block;
+    }
+
+    /* Headings */
+  h1 {
+      font-size: 2.5rem;
+      color: #e85d04;
+      margin-bottom: 10px;
+     }
+
+   /* Welcome text */
+  p {
+     font-size: 1.1rem;
+     line-height: 1.5;
+     margin: 10px 0;
+ }
+
+/* Phone number */
+ .phone {
+ font-weight: bold;
+ color: #6a040f;
+ }
+
+/* Button styling */
+.btn {
+display: inline-block;
+background-color: #e85d04;
+color: white;
+padding: 10px 20px;
+margin-top: 20px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+.btn:hover {
+background-color: #d00000;
+}
     </style>
  </head>
  <body>
@@ -72,7 +131,20 @@
          <p>Your favorite place for delicious food and warm hospitality.</p>
              <p>Call us at <span class="phone">{{ phone_number }}</span> for reservations or inquiries.</p>
              
+ <div class="container">
+<!-- Logo -->
+<img src="{% static 'images/logo.png' %}" alt="{{ restaurant_name }} Logo" class="logo">
 
+<!-- Title -->
+<h1>Welcome to {{ restaurant_name }}</h1>
+
+ <!-- Description -->
+<p>Your favorite place for delicious food and warm hospitality.</p>
+<p>Call us at <span class="phone">{{ phone_number }}</span> for reservations or inquiries.</p>
+
+ <!-- Example Button -->
+<a href="/menu/" class="btn">View Menu</a>
+ </div>
 
 
       <header>
