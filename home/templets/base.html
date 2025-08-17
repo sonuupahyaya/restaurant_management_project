@@ -47,6 +47,8 @@
 
 
 
+
+
     <title>{% block title %}My Restaurant{% endblock %}</title>
         <style>
                 body {
@@ -161,4 +163,22 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </footer>
                                                                                                                                                                                                                                                                                                                                                 </body>
                                                                                                                                                                                                                                                                                                                                                 </html>
-                                                                                                                                                                                                                                                                                                                                                
+{% extends "base.html" %}                                                                                                                                                                                                                                                                                                                                                
+
+{% block title %}Home - {{ restaurant_name }}{% endblock %}
+
+{% block content %}
+    <h2>Welcome to {{ restaurant_name }}!</h2>
+        <p>Your favorite place for delicious meals.</p>
+
+            <!--  Search Bar -->
+                <form action="#" method="get" style="margin: 20px 0; text-align: center;">
+                        <input type="text" name="q" placeholder="Search menu items..." 
+                                       style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px;">
+                                               <button type="submit" style="padding: 10px 15px; border: none; border-radius: 5px; background: #333; color: white; cursor: pointer;">
+                                                           Search
+                                                                   </button>
+                                                                       </form>
+
+                                                                           <img src="{% static 'images/logo.png' %}" alt="Restaurant Logo" style="max-width: 200px; margin: 20px auto; display: block;">
+                                                                           {% endblock %}
