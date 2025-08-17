@@ -9,3 +9,6 @@ urlpatterns = [
     path('', views.home, name='home'),
         path('reservations/', views.reservations, name='reservations'),
         ]
+        urlpatterns = []
+            path('feedback/', views.feedback_view, name='feedback'),
+            ]
