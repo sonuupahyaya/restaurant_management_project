@@ -44,5 +44,39 @@
         <p><span class="contact-label">Address:</span> {{ contact.address }}</p>
     </div>
 
+{% EXTENDS "BASE.HTML" %}
+
+{% BLOCK TITLE %}cONTACT uS - {{ RESTAURANT_NAME }}{% ENDBLOCK %}
+
+{% BLOCK CONTENT %}
+    <H1>cONTACT uS</H1>
+        <FORM ID="CONTACTfORM" METHOD="POST">
+                {% CSRF_TOKEN %}
+                        <LABEL FOR="NAME">nAME:</LABEL><BR>
+                                <INPUT TYPE="TEXT" ID="NAME" NAME="NAME"><BR><BR>
+
+                                        <LABEL FOR="EMAIL">eMAIL:</LABEL><BR>
+                                                <INPUT TYPE="EMAIL" ID="EMAIL" NAME="EMAIL"><BR><BR>
+
+                                                        <LABEL FOR="MESSAGE">mESSAGE:</LABEL><BR>
+                                                                <TEXTAREA ID="MESSAGE" NAME="MESSAGE"></TEXTAREA><BR><BR>
+
+                                                                        <BUTTON TYPE="SUBMIT">sEND</BUTTON>
+                                                                            </FORM>
+
+                                                                                <SCRIPT>
+                                                                                        // sIMPLE CLIENT-SIDE VALIDATION
+                                                                                                DOCUMENT.GETeLEMENTbYiD("CONTACTfORM").ADDeVENTlISTENER("SUBMIT", FUNCTION(EVENT) {
+                                                                                                            CONST NAME = DOCUMENT.GETeLEMENTbYiD("NAME").VALUE.TRIM();
+                                                                                                                        CONST EMAIL = DOCUMENT.GETeLEMENTbYiD("EMAIL").VALUE.TRIM();
+
+                                                                                                                                    IF (!NAME || !EMAIL) {
+                                                                                                                                                    EVENT.PREVENTdEFAULT(); // STOP FORM SUBMISSION
+                                                                                                                                                                    ALERT("pLEASE FILL IN BOTH nAME AND eMAIL FIELDS BEFORE SUBMITTING.");
+                                                                                                                                                                                }
+                                                                                                                                                                                        });
+                                                                                                                                                                                            </SCRIPT>
+                                                                                                                                                                                            {% ENDBLOCK %}
+                                                                                                                                                                                            
   </body>
   </html>
