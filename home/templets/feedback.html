@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Feedback - {{ restaurant_name }}{% endblock %}
+
+{% block content %}
+<h2>We Value Your Feedback</h2>
+
+<!-- Show messages -->
+{% if messages %}
+  <ul>
+      {% for message in messages %}
+            <li style="color: green;">{{ message }}</li>
+                {% endfor %}
+                  </ul>
+                  {% endif %}
+
+                  <form method="post" id="feedbackForm">
+                      {% csrf_token %}
+                          {{ form.as_p }}
+                              <button type="submit">Submit Feedback</button>
+                              </form>
+
+                              <hr>
+
+                              <h3>What others are saying:</h3>
+                              <ul>
+                                {% for fb in feedback_list %}
+                                    <li><strong>{{ fb.name|default:"Anonymous" }}</strong> ({{ fb.created_at|date:"M d, Y H:i" }}):<br>
+                                            {{ fb.comments }}</li>
+                                              {% empty %}
+                                                  <li>No feedback yet. Be the first to share your thoughts!</li>
+                                                    {% endfor %}
+                                                    </ul>
+
+                                                    <!-- Client-side validation -->
+                                                    <script>
+                                                    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+                                                        const comments = document.querySelector("textarea").value.trim();
+                                                            if (!comments) {
+                                                                    alert("Please enter your feedback before submitting.");
+                                                                            event.preventDefault();
+                                                                                }
+                                                                                });
+                                                                                </script>
+                                                                                {% endblock %}
+                                                                                
