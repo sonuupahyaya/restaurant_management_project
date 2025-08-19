@@ -38,4 +38,6 @@ class MenuAdmin(admin.ModelAdmin):
                                 @admin.register(OrderItem)
                                 class OrderItemAdmin(admin.ModelAdmin):
                                     list_display = ("id", "order", "menu_item", "quantity")
-                                    
+ from .models import UserProfile                                   
+
+ admin.site.register(UserProfile)
