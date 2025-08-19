@@ -1,6 +1,7 @@
 
     # home/views.py
     from django.http import HttpResponse
+    from .models import Menu
     from django.shortcuts import render
     from import datetime import datetime
     def homepage(request):
@@ -50,3 +51,7 @@ def reservations(request):
                     "phone_number": "+91 98765 43210",
                             "current_year": datetime.now().year
                                 })
+def home(request):                                
+        menu_items = Menu.objects.all()  # fetch menu from DB
+            return render(request, "home.html", {"menu_items": menu_items})
+            
