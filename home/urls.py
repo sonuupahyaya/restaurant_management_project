@@ -12,3 +12,7 @@ urlpatterns = [
         urlpatterns = []
             path('feedback/', views.feedback_view, name='feedback'),
             ]
+            urlpatterns = []
+                path("", views.home, name="home"),
+                ]
+                
