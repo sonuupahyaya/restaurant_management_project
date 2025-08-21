@@ -140,3 +140,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 RESTAURANT_NAME = "Delicious Bites"
+RESTAURANT_ADDRESS = "123 Main Street, New Delhi, India"
