@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Customer
+from django.shortcuts import
 from .models import Menue
 from django.conf import settings
 def customer_list(request):
@@ -40,4 +41,26 @@ def home(request):
                 """
                     menu_items = Menu.objects.all().order_by("name")  # fetch all, order by name
                         return render(request, "menu.html", {"menu_items": menu_items})
-                        
+ render, redirect                       
+ from .forms import ContactForm
+
+ def homepage(request):
+     restaurant_name = getattr(settings, "RESTAURANT_NAME", "My Restaurant")
+         phone_number = getattr(settings, "RESTAURANT_PHONE", "+91 99999 99999")
+             address = getattr(settings, "RESTAURANT_ADDRESS", "Address not set")
+
+                 if request.method == "POST":
+                         form = ContactForm(request.POST)
+                                 if form.is_valid():
+                                             form.save()  # Save to database
+                                                         return redirect("homepage")  # Redirect to avoid resubmission
+                                                             else:
+                                                                     form = ContactForm()
+
+                                                                         return render(request, "homepage.html", {
+                                                                                 "restaurant_name": restaurant_name,
+                                                                                         "phone_number": phone_number,
+                                                                                                 "address": address,
+                                                                                                         "form": form,
+                                                                                                             })
+                                                                                                             
