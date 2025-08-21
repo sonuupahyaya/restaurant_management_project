@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Customer
+from .models import Menue
 from django.conf import settings
 def customer_list(request):
     customers = Customer.objects.all()
@@ -33,4 +34,10 @@ def customer_list(request):
 def home(request):                 
         restaurant_name = getattr(settings, "RESTAURANT_NAME", "My Restaurant")
             return render(request, "home.html", {"restaurant_name": restaurant_name})
-            
+ def menu_view(request):           
+        """
+            Display all menu items on a dedicated menu page.
+                """
+                    menu_items = Menu.objects.all().order_by("name")  # fetch all, order by name
+                        return render(request, "menu.html", {"menu_items": menu_items})
+                        
