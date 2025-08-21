@@ -138,3 +138,5 @@ RESTAURANT_NAME = "TableTrek Delight"
 RESTAURANT_PHONE = "+919909939393"
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+RESTAURANT_NAME = "Delicious Bites"
