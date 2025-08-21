@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Customer
-
+from django.conf import settings
 def customer_list(request):
     customers = Customer.objects.all()
         return render(request, 'account/customers.html', {'customers': customers})
@@ -30,4 +30,7 @@ def customer_list(request):
          def about(request):
              restaurant = Restaurant.objects.first()
                  return render(request, 'home/about.html', {'restaurant': restaurant})
-                 
+def home(request):                 
+        restaurant_name = getattr(settings, "RESTAURANT_NAME", "My Restaurant")
+            return render(request, "home.html", {"restaurant_name": restaurant_name})
+            
