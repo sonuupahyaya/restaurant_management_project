@@ -76,4 +76,11 @@ class Customer(models.Model):
 
                                                                                                                     def get_subtotal(self):
                                                                                                                             return self.menu_item.price * self.quantity
-                                                                                                                            
+class Menu(models.Model):                                                                                                                            
+        name = models.CharField(max_length=100)   # Dish name
+            description = models.TextField()          # Dish description
+                price = models.DecimalField(max_digits=6, decimal_places=2)  # e.g. 9999.99
+
+                    def __str__(self):
+                            return f"{self.name} - ${self.price}"
+                            
