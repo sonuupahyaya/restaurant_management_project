@@ -41,3 +41,8 @@ class MenuAdmin(admin.ModelAdmin):
  from .models import UserProfile                                   
 
  admin.site.register(UserProfile)
+ 
+ @admin.register(Menu)
+ class MenuAdmin(admin.ModelAdmin):
+     list_display = ("name", "price")
+         search_fields = ("name", "description")
