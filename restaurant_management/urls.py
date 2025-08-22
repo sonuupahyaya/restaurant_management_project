@@ -3,7 +3,8 @@ from django.urls import path, include
 from home.Views import home_view
 from django.conf.urls.static import static
 from django.urls import path, include
-
+from django.conf.urls.static import
+from django.conf.import settings
 urlpatterns = [
     path('products/',include('products.urls')),
     path('admin/', admin.site.urls),
@@ -18,6 +19,13 @@ urlpatterns = [
 handler404 = 'home.views.custom_404_view'
 urlpatterns = []
     path("", include("yourapp.urls")),  # your app routes
+    ]
+
+    if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+        
+urlpatterns = []
+    path("", include("yourapp.urls")),  # replace 'yourapp' with your app name
     ]
 
     if settings.DEBUG:
