@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Menu, Order
 from .models import
+from .models import Contact
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
@@ -50,3 +51,4 @@ class MenuAdmin(admin.ModelAdmin):
 RestaurantLocation
 
 admin.site.register(RestaurantLocation)
+admin.site.register(Contact)
