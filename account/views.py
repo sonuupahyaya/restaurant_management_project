@@ -75,4 +75,7 @@ def home(request):
                                                             form = ContactForm()
 
                                                                 return render(request, "contact.html", {"form": form})
-                                                                
+def menu_view(request):                                                                
+        items = Menu.objects.all()
+            return render(request, "menu.html", {"items": items})
+            
