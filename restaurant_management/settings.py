@@ -144,3 +144,5 @@ RESTAURANT_NAME = "Delicious Bites"
 RESTAURANT_ADDRESS = "123 Main Street, New Delhi, India"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
