@@ -4,6 +4,7 @@ from .form import ContactForm
 from .models import Customer
 from django.shortcuts import
 from .models import Menue
+from .models import RestaurantLocation
 from django.conf import settings
 def customer_list(request):
     customers = Customer.objects.all()
@@ -78,4 +79,7 @@ def home(request):
 def menu_view(request):                                                                
         items = Menu.objects.all()
             return render(request, "menu.html", {"items": items})
+def home(request):            
+        location = RestaurantLocation.objects.first()  # get the first saved address
+            return render(request, "home.html", {"location": location})
             
