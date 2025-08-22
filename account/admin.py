@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Menu, Order
 from .models import
 from .models import Contact
-
+from.models import RestaurantLocation
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "price")  # show these columns in admin list
@@ -52,3 +52,4 @@ RestaurantLocation
 
 admin.site.register(RestaurantLocation)
 admin.site.register(Contact)
+admin.site.register(RestaurantLocation)
