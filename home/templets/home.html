@@ -178,6 +178,16 @@ background-color: #d00000;
                                                                                                                                                                                                                                                                                                                                                                                                 </style>
                                                                                                                                                                                                                                                                                                                                                                                                 </head>
                                                                                                                                                                                                                                                                                                                                                                                                 <body>
+<h1>Welcome to Our Restaurant</h1>                                                                                                                                                                                                                                                                                                                                                                                                    
+
+    {% if location %}
+            <div class="address">
+                        <h3> Our Address:</h3>
+                                    <p>{{ location.address }}, {{ location.city }}, {{ location.state }} - {{ location.zip_code }}</p>
+                                            </div>
+                                                {% else %}
+                                                        <p>Address not available.</p>
+                                                            {% endif %}
                                                                                                                                                                                                                                                                                                                                                                                                     <h1>Welcome to {{ restaurant_name }}</h1>
                                                                                                                                                                                                                                                                                                                                                                                                         <p style="text-align:center;">Enjoy our delicious menu and cozy atmosphere.</p>
 
