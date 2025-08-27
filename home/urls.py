@@ -1,7 +1,11 @@
 from django.urls import path
 from . import views
 from .view import contact_View
-
+urlpatterns = []
+    path("contact/", views.contact_view, name="contact"),
+        path("contact/success/", lambda r: render(r, "contact_success.html"), name="contact_success"),
+        ]
+        
 urlpatterns = [
     path("contact/", views.contact_us, name="contact_us"),
 ]
