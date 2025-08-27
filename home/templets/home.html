@@ -256,6 +256,12 @@ background-color: #d00000;
 <main>
       <p>Manage your menu, orders, and customers easily.</p>
       <a href="/products/menu/" class="button">View Menu</a>
+       <h1>Welcome to {{ location.name }}</h1>
+           {% if location and location.address %}
+                   <p>📍 Address: {{ location.address }}</p>
+                       {% else %}
+                               <p>No address available yet.</p>
+                                   {% endif %}
 
 </main>
 </body>
