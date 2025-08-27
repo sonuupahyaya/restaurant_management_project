@@ -8,7 +8,23 @@ from .models import RestaurantLocation
 from django.conf import settings
 from django.shortcuts import render
 from .models import RestaurantLocation
+from .models import MenuItem, RestaurantLocation
 
+def home(request):
+    query = request.GET.get("q")  # search keyword from URL
+        if query:
+                menu_items = MenuItem.objects.filter(name__icontains=query)
+                    else:
+                            menu_items = MenuItem.objects.all()
+
+                                location = RestaurantLocation.objects.first()
+
+                                    return render(request, "home.html", {
+                                            "location": location,
+                                                    "menu_items": menu_items,
+                                                            "query": query
+                                                                })
+                                                                
 def home(request):
     location = RestaurantLocation.objects.first()
         return render(request, "home.html", {"location": location})
