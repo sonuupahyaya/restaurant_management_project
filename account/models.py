@@ -124,3 +124,10 @@ class Menu(models.Model):
                         def __str__(self):
                                 return f"{self.address}, {self.city}, {self.state} {self.zip_code}"
                                 
+                                class RestaurantLocation(models.Model):
+                                    name = models.CharField(max_length=100)
+                                        address = models.CharField(max_length=255, blank=True, null=True)
+                                            opening_hours = models.JSONField(default=dict, blank=True, null=True)  # NEW FIELD
+
+                                                def __str__(self):
+                                                        return self.name
