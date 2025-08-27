@@ -3,6 +3,12 @@ from .models import Menu, Order
 from .models import
 from .models import Contact
 from.models import RestaurantLocation
+from .models import MenuItem
+
+@admin.register(MenuItem)
+class MenuItemAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price')
+    
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "price")  # show these columns in admin list
