@@ -30,4 +30,11 @@ urlpatterns = []
 
     if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-        
+        urlpatterns = []
+            path('', include('restaurant.urls')),   # your app routes
+                path('admin/', admin.site.urls),
+                ]
+
+                if settings.DEBUG:
+                    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                    
