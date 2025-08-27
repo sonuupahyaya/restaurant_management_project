@@ -248,7 +248,21 @@ background-color: #d00000;
                 <p>Call us at <span style="font-weight:bold; color:#6a040f;">{{ phone_number }}</span> for reservations or inquiries.</p>
                     <a href="/menu/" style="display:inline-block; background-color:#e85d04; color:white; padding:10px 20px; margin-top:20px; border-radius:5px; text-decoration:none; font-weight:bold;">View Menu</a>
                     {% endblock %}
-                    
+   <h1>Welcome to {{ location.name }}</h1>                  
+       {% if location and location.address %}
+               <p>📍 Address: {{ location.address }}</p>
+                   {% endif %}
+
+                       {% if location and location.opening_hours %}
+                               <h2>🕒 Opening Hours</h2>
+                                       <ul>
+                                                   {% for day, hours in location.opening_hours.items %}
+                                                                   <li><strong>{{ day }}:</strong> {{ hours }}</li>
+                                                                               {% endfor %}
+                                                                                       </ul>
+                                                                                           {% else %}
+                                                                                                   <p>Opening hours not available.</p>
+                                                                                                       {% endif %}
 
       <header>
            Welcome to Our Restaurant Management System
