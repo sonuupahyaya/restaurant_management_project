@@ -6,6 +6,13 @@ from django.shortcuts import
 from .models import Menue
 from .models import RestaurantLocation
 from django.conf import settings
+from django.shortcuts import render
+from .models import RestaurantLocation
+
+def home(request):
+    location = RestaurantLocation.objects.first()
+        return render(request, "home.html", {"location": location})
+        
 def customer_list(request):
     customers = Customer.objects.all()
         return render(request, 'account/customers.html', {'customers': customers})
