@@ -276,6 +276,37 @@ background-color: #d00000;
                        {% else %}
                                <p>No address available yet.</p>
                                    {% endif %}
+<h1>Welcome to {{ location.name }}</h1>
+    <p>📍 Address: {{ location.address }}</p>
+        <p>🕒 Opening Hours:</p>
+            <ul>
+                    {% for day, hours in location.opening_hours.items %}
+                                <li>{{ day }}: {{ hours }}</li>
+                                        {% endfor %}
+                                            </ul>
+
+                                                <h2>Search Menu</h2>
+                                                    <form method="get" action=".">
+                                                            <input type="text" name="q" placeholder="Search for a dish..." value="{{ query|default:'' }}">
+                                                                    <button type="submit">Search</button>
+                                                                        </form>
+
+                                                                            <h2>Menu</h2>
+                                                                                {% if menu_items %}
+                                                                                        <ul>
+                                                                                                    {% for item in menu_items %}
+                                                                                                                    <li>
+                                                                                                                                        <strong>{{ item.name }}</strong> - ${{ item.price }} <br>
+                                                                                                                                                            {{ item.description }} <br>
+                                                                                                                                                                                {% if item.image %}
+                                                                                                                                                                                                        <img src="{{ item.image.url }}" alt="{{ item.name }}" width="120">
+                                                                                                                                                                                                                            {% endif %}
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                                        {% endfor %}
+                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                    {% else %}
+                                                                                                                                                                                                                                                                            <p>No menu items found.</p>
+                                                                                                                                                                                                                                                                                {% endif %}
 
 </main>
 </body>
