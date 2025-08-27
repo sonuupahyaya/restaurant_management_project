@@ -68,6 +68,19 @@
                                                                                                                                                                                                                                                                                                                                              color: #e67e22;
                                                                                                                                                                                                                                                                                                                                                          margin-top: 8px;
                                                                                                                                                                                                                                                                                                                                                                  }
+ <h1>Our Menu</h1>                                                                                                                                                                                                                                                                                                                                                                 
+     <ul>
+             {% for item in menu_items %}
+                         <li style="margin-bottom: 20px;">
+                                         {% if item.image %}
+                                                             <img src="{{ item.image.url }}" alt="{{ item.name }}" width="150" height="150" style="object-fit: cover; border-radius: 8px;">
+                                                                             {% endif %}
+                                                                                             <h2>{{ item.name }}</h2>
+                                                                                                             <p>{{ item.description }}</p>
+                                                                                                                             <p><strong>₹{{ item.price }}</strong></p>
+                                                                                                                                         </li>
+                                                                                                                                                 {% endfor %}
+                                                                                                                                                     </ul>
                                                                                                                                                                                                                                                                                                                                         </style>
                                                                                                                                                                                                                                                                                                                                         </head>
                                                                                                                                                                                                                                                                                                                                         <body>
