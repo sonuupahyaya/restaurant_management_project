@@ -8,6 +8,23 @@ import User
 # restaurant/models.py
 # restaurant/models.py
 
+# restaurant/models.py
+
+class RestaurantLocation(models.Model):
+    name = models.CharField(max_length=100, default="My Restaurant")
+        address = models.CharField(max_length=255)
+            city = models.CharField(max_length=100)
+                state = models.CharField(max_length=100)
+                    zip_code = models.CharField(max_length=10)
+                        phone = models.CharField(max_length=15, blank=True, null=True)
+                            logo = models.ImageField(upload_to='restaurant_logos/', blank=True, null=True)
+                                history = models.TextField(blank=True, null=True)   # ✅ new field
+                                    mission = models.TextField(blank=True, null=True)   # ✅ new field
+
+                                        def __str__(self):
+                                                return self.name
+                                                
+
 
 
 class RestaurantLocation(models.Model):
