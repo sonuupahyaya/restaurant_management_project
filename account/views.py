@@ -10,6 +10,19 @@ from django.shortcuts import render
 from .models import RestaurantLocation
 from .models import MenuItem, RestaurantLocation
 
+# restaurant/views.py
+
+
+from .models import RestaurantLocation, MenuItem
+
+def home(request):
+    restaurant = RestaurantLocation.objects.first()
+        menu_items = MenuItem.objects.all()
+            return render(request, 'restaurant/home.html', {
+                    'restaurant': restaurant,
+                            'menu_items': menu_items
+                                })
+
 def home(request):
     query = request.GET.get("q")  # search keyword from URL
         if query:
