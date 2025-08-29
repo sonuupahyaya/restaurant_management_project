@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ restaurant.name }} - About Us</title>
+    </head>
+    <body>
+        {% if restaurant.logo %}
+                <img src="{{ restaurant.logo.url }}" alt="{{ restaurant.name }} Logo" width="200">
+                    {% endif %}
+
+                        <h1>About {{ restaurant.name }}</h1>
+
+                            <h2>History</h2>
+                                <p>{{ restaurant.history|default:"Our history will be updated soon." }}</p>
+
+                                    <h2>Mission</h2>
+                                        <p>{{ restaurant.mission|default:"Our mission will be updated soon." }}</p>
+                                        <p><a href="{% url 'restaurant_info' %}">Learn more about us</a></p>
+                                        
+
+                                            <p><a href="{% url 'home' %}">⬅ Back to Home</a></p>
+                                            </body>
+                                            </html>
