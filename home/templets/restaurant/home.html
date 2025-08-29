@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ restaurant.name }}</title>
+    </head>
+    <body>
+        {% if restaurant.logo %}
+                <img src="{{ restaurant.logo.url }}" alt="{{ restaurant.name }} Logo" width="200">
+                    {% endif %}
+
+                        <h1>Welcome to {{ restaurant.name }}</h1>
+                            <p>📞 {{ restaurant.phone }}</p>
+                                <p>📍 {{ restaurant.address }}, {{ restaurant.city }}, {{ restaurant.state }} - {{ restaurant.zip_code }}</p>
+
+                                    <!-- ✅ Show Cart Count -->
+                                        <h3>🛒 Your Cart: {{ cart_count }} item(s)</h3>
+
+                                            <h2>Menu</h2>
+                                                <ul>
+                                                        {% for item in menu_items %}
+                                                                    <li>
+                                                                                    {{ item.name }} - ${{ item.price }}
+                                                                                                    <a href="{% url 'add_to_cart' item.id %}">Add to Cart</a>
+                                                                                                                </li>
+                                                                                                                        {% empty %}
+                                                                                                                                    <li>No items available</li>
+                                                                                                                                            {% endfor %}
+                                                                                                                                                </ul>
+
+                                                                                                                                                    <p><a href="{% url 'restaurant_info' %}">Learn more about us</a></p>
+                                                                                                                                                    </body>
+                                                                                                                                                    </html>
+                                                                                                                                                    
