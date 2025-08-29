@@ -13,8 +13,16 @@ from .models import MenuItem, RestaurantLocation
 # restaurant/views.py
 
 
-from .models import RestaurantLocation, MenuItem
 
+from .models import RestaurantLocation, MenuItem
+# restaurant/views.py
+from django.shortcuts import render
+from .models import RestaurantLocation
+
+def restaurant_info(request):
+    restaurant = RestaurantLocation.objects.first()
+        return render(request, 'restaurant/info.html', {'restaurant': restaurant})
+        
 def home(request):
     restaurant = RestaurantLocation.objects.first()
         menu_items = MenuItem.objects.all()
