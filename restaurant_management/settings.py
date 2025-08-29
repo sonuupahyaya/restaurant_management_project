@@ -156,3 +156,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yourrestaurant@gmail.com'  # Replace later
 EMAIL_HOST_PASSWORD = 'your-app-password'     # Replace later
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# guest_order_project/settings.py
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
