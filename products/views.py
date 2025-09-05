@@ -4,6 +4,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+
+
+def home(request):
+        restaurant = Restaurant.objects.first()  # get the first restaurant
+            return render(request, "restaurant/home.html", {"restaurant": restaurant})
+            
 class MenuListView(APIView):
     def get(self, request):
             """
