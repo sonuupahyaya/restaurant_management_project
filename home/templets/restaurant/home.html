@@ -35,6 +35,28 @@
           {{ restaurant.phone_number }}
              </span>
              </p>
+
+             <!-- restaurant/templates/restaurant/home.html -->
+
+             <h1>Welcome to {{ restaurant.name }}</h1>
+
+             <!-- Tagline / Welcome Message -->
+             <p style="font-size: 20px; color: #34495e; font-style: italic; margin-top: 10px;">
+                "Serving happiness with every bite 🍴"
+                </p>
+
+                <p><strong>📍 Address:</strong> {{ restaurant.address }}</p>
+
+                <p><strong>📞 Contact Us:</strong> 
+                   <span style="font-size: 18px; color: #2c3e50;">
+                          {{ restaurant.phone_number }}
+                             </span>
+                             </p>
+
+                             {% if restaurant.logo %}
+                                 <img src="{{ restaurant.logo.url }}" alt="Restaurant Logo" style="max-width: 200px; margin-top: 15px;">
+                                 {% endif %}
+                                 
              
                                                                                                                                                     <p><a href="{% url 'restaurant_info' %}">Learn more about us</a></p>
                                                                                                                                                     </body>
