@@ -78,4 +78,15 @@ def home(request):
                                                                                                 ("About Us", None),
                                                                                                     ]
                                                                                                         return render(request, "restaurant/about.html", {"restaurant": restaurant, "breadcrumbs": breadcrumbs})
-                                                                                                        
+# built-in helper for timezone aware datetime                                                                                                        
+
+def home(request):
+    breadcrumbs = [
+            ("Home", None),
+                ]
+                    current_time = timezone.now()  # fetch current datetime
+                        return render(request, "restaurant/home.html", {
+                                "breadcrumbs": breadcrumbs,
+                                        "current_time": current_time,
+                                            })
+                                            
