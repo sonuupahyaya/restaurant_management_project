@@ -23,4 +23,10 @@ urlpatterns = [
  urlpatterns = []               
      path("contact/", contact_view, name="contact"),
      ]
-     
+     urlpatterns = []
+         path("", views.home, name="home"),
+             path("menu/", views.menu_page, name="menu"),
+                 path("about/", views.about_page, name="about"),
+                     path("faq/", views.faq_page, name="faq"),  # 👈 New FAQ page
+                     ]
+                     
