@@ -69,7 +69,29 @@
                                 View Frequently Asked Questions
                                     </a>
                                     </div>
-                                    
+{% extends "restaurant/base.html" %}                                    
+
+{% block content %}
+    {% include "restaurant/breadcrumbs.html" %}
+
+        <h1 style="text-align: center;">{{ restaurant_name }}</h1>
+            <p style="text-align: center; font-style: italic;">Welcome to our restaurant! Enjoy the finest dining experience.</p>
+
+                <!-- ✅ Current Date and Time Section -->
+                    <div style="margin: 20px auto; text-align: center; padding: 15px; border: 1px solid #ddd; width: 50%; border-radius: 8px; background-color: #f9f9f9;">
+                            <h3>Current Date & Time</h3>
+                                    <p style="font-size: 18px; color: #2c3e50;">
+                                                {{ current_time|date:"l, F j, Y - h:i A" }}
+                                                        </p>
+                                                            </div>
+
+                                                                <!-- Existing links -->
+                                                                    <div style="margin-top: 20px; text-align: center;">
+                                                                            <a href="{% url 'faq' %}" style="margin-right: 15px; text-decoration: none; color: #3498db;">FAQ</a>
+                                                                                    <a href="{% url 'menu' %}" style="text-decoration: none; color: #3498db;">Menu</a>
+                                                                                        </div>
+                                                                                        {% endblock %}
+                                                                                        
                 
                                                                                                                                                     <p><a href="{% url 'restaurant_info' %}">Learn more about us</a></p>
                                                                                                                                                     </body>
