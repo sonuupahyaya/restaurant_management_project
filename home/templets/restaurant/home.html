@@ -58,6 +58,13 @@
                                  {% endif %}
                                  
              
+
+             {% include "restaurant/breadcrumbs.html" %}
+             <h1>Welcome to {{ restaurant.name }}</h1>
+             <p style="font-size: 20px; font-style: italic; color: #34495e;">
+                "Serving happiness with every bite 🍴"
+                </p>
+                
                                                                                                                                                     <p><a href="{% url 'restaurant_info' %}">Learn more about us</a></p>
                                                                                                                                                     </body>
                                                                                                                                                     </html>
