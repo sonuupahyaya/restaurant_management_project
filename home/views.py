@@ -54,4 +54,28 @@ def reservations(request):
 def home(request):                                
         menu_items = Menu.objects.all()  # fetch menu from DB
             return render(request, "home.html", {"menu_items": menu_items})
-            
+            def home(request):
+                    restaurant = Restaurant.objects.first()
+                        breadcrumbs = [
+                                ("Home", None),  # Current page
+                                    ]
+                                        return render(request, "restaurant/home.html", {"restaurant": restaurant, "breadcrumbs": breadcrumbs})
+
+
+                                        def menu_page(request):
+                                            items = MenuItem.objects.all()
+                                                breadcrumbs = [
+                                                        ("Home", "/"),
+                                                                ("Menu", None),
+                                                                    ]
+                                                                        return render(request, "restaurant/menu.html", {"items": items, "breadcrumbs": breadcrumbs})
+
+
+                                                                        def about_page(request):
+                                                                            restaurant = Restaurant.objects.first()
+                                                                                breadcrumbs = [
+                                                                                        ("Home", "/"),
+                                                                                                ("About Us", None),
+                                                                                                    ]
+                                                                                                        return render(request, "restaurant/about.html", {"restaurant": restaurant, "breadcrumbs": breadcrumbs})
+                                                                                                        
