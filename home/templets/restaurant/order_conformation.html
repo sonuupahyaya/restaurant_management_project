@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="order-confirmation text-center mt-5">
+    <h2>✅ Order Confirmed!</h2>
+        <p>Thank you for your order. Your food will be ready soon.</p>
+            <h4>Order Number: <strong>{{ order_number }}</strong></h4>
+
+                <a href="{% url 'home' %}" class="btn btn-primary mt-4">Back to Home</a>
+                </div>
+                {% endblock %}
+                
