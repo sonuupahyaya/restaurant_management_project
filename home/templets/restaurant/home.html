@@ -27,6 +27,26 @@
                                                                                                                                             {% endfor %}
                                                                                                                                                 </ul>
 <!-- restaurant/templates/restaurant/home.html -->
+<DIV CLASS="TEXT-CENTER MT-5">
+        <A HREF="{% URL 'ORDER_PAGE' %}" CLASS="ORDER-BTN">🍽️ oRDER nOW</A>
+        </DIV>
+        .ORDER-BTN {}
+            DISPLAY: INLINE-BLOCK;
+                PADDING: 15PX 30PX;
+                    BACKGROUND-COLOR: #FF5722; /* ORANGE-RED */
+                        COLOR: WHITE;
+                            FONT-SIZE: 1.3REM;
+                                FONT-WEIGHT: BOLD;
+                                    BORDER-RADIUS: 8PX;
+                                        TEXT-DECORATION: NONE;
+                                            TRANSITION: BACKGROUND 0.3S EASE, TRANSFORM 0.2S EASE;
+                                            }
+
+                                            .ORDER-BTN:HOVER {
+                                                BACKGROUND-COLOR: #E64A19; /* DARKER ORANGE */
+                                                    TRANSFORM: SCALE(1.05);
+                                                    }
+                                                    
 
 <h1>Welcome to {{ restaurant.name }}</h1>
 
