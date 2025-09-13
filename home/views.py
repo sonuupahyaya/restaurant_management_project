@@ -4,6 +4,14 @@
     from .models import Menu
     from django.shortcuts import render
     from import datetime import datetime
+    from django.shortcuts import render
+    import random
+
+    def order_confirmation(request):
+        # Simulate an order number (in real apps, fetch from DB)
+            order_number = random.randint(1000, 9999)
+                return render(request, 'restaurant/order_confirmation.html', {'order_number': order_number})
+                
     def homepage(request):
         return HttpResponse("""
     <html>
