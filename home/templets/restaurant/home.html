@@ -46,7 +46,13 @@
                                                 BACKGROUND-COLOR: #E64A19; /* DARKER ORANGE */
                                                     TRANSFORM: SCALE(1.05);
                                                     }
-                                                    
+                                                    {% if user.is_authenticated %}
+                                                        <p class="text-success">Welcome back, {{ user.username }}! ??</p>
+                                                            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                                                            {% else %}
+                                                                <!-- login form goes here -->
+                                                                {% endif %}
+                                                                
 
 <h1>Welcome to {{ restaurant.name }}</h1>
 
