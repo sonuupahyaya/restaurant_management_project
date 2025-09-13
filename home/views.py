@@ -89,4 +89,6 @@ def home(request):
                                 "breadcrumbs": breadcrumbs,
                                         "current_time": current_time,
                                             })
-                                            
+DEF ORDER_PAGE(REQUEST):                                            
+    RETURN RENDER(REQUEST, 'RESTAURANT/ORDER_PAGE.HTML')
+    
