@@ -100,3 +100,8 @@ def home(request):
 DEF ORDER_PAGE(REQUEST):                                            
     RETURN RENDER(REQUEST, 'RESTAURANT/ORDER_PAGE.HTML')
     
+    from django.shortcuts import render
+
+    def privacy_policy(request):
+        return render(request, 'privacy_policy.html')
+        
