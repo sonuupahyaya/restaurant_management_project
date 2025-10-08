@@ -104,4 +104,14 @@ DEF ORDER_PAGE(REQUEST):
 
     def privacy_policy(request):
         return render(request, 'privacy_policy.html')
-        
+        from rest_framework.generics import ListAPIView
+        from .models import MenuCategory
+        from .serializers import MenuCategorySerializer
+
+        class MenuCategoryListView(ListAPIView):
+            """
+                API endpoint to retrieve all menu categories.
+                    """
+                        queryset = MenuCategory.objects.all()
+                            serializer_class = MenuCategorySerializer
+                            
