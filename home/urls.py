@@ -38,4 +38,10 @@ urlpatterns = [
                              path('login/', auth_views.LoginView.as_view(template_name='restaurant/home.html'), name='login'),
                                  path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
                                  ]
-                                 
+                                 from django.urls import path
+                                 from .views import MenuCategoryListView
+
+                                 urlpatterns = [
+                                     path('api/menu-categories/', MenuCategoryListView.as_view(), name='menu-categories-list'),
+                                     ]
+                                     
