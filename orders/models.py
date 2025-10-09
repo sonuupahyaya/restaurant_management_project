@@ -43,4 +43,14 @@ class Coupon(models.Model):
                                         def is_valid(self):
                                                 today = timezone.now().date()
                                                         return self.is_active and self.valid_from <= today <= self.valid_until
-                                                        
+# menu/models.py                                                        
+
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+        description = models.TextField(blank=True)
+            price = models.DecimalField(max_digits=8, decimal_places=2)
+                is_available = models.BooleanField(default=True)
+
+                    def __str__(self):
+                            return self.name
