@@ -114,4 +114,31 @@ DEF ORDER_PAGE(REQUEST):
                     """
                         queryset = MenuCategory.objects.all()
                             serializer_class = MenuCategorySerializer
-                            
+
+
+class MenuItemUpdateViewSet(viewsets.ViewSet):
+    permission_classes = [IsAdminUser]  # Only admins can update
+
+        def update(self, request, pk=None):
+                    """
+                            Update an existing menu item by ID.
+                                    """
+                                            try:
+                                                            menu_item = get_object_or_404(MenuItem, pk=pk)
+                                                                        serializer = MenuItemSerializer(menu_item, data=request.data, partial=True)
+                                                                                    
+                                                                                                if serializer.is_valid():
+                                                                                                                    serializer.save()
+                                                                                                                                    return Response({})
+                                                                                                                                                        "success": True,
+                                                                                                                                                                            "message": "Menu item updated successfully.",
+                                                                                                                                                                                                "data": serializer.data
+                                                                                                                                                                                                                }, status=status.HTTP_200_OK)
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                        except Exception as e:
+                                                                                                                                                                                                                                                                    return Response(
+                                                                                                                                                                                                                                                                                    {"error": f"An unexpected error occurred: {str(e)}"},
+                                                                                                                                                                                                                                                                                                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                                                                                                                                                                                                                                                                                                                )
