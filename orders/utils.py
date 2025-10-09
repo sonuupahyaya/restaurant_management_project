@@ -21,4 +21,20 @@ def generate_coupon_code(length=10):
                                                                             # Check if the code already exists in the database
                                                                                     if not Coupon.objects.filter(code=code).exists():
                                                                                                 return code
-                                                                                                
+
+
+def get_daily_sales_total(date):
+    """
+        Calculate total sales for a specific date.
+
+            Args:
+                    date (datetime.date): The date for which to calculate sales.
+
+                        Returns:
+                                Decimal or float: The total sales amount for the given date.
+                                    """
+                                        result = Order.objects.filter(created_at__date=date).aggregate(
+                                                total_sum=Sum('total_price')
+                                                    )['total_sum']
+
+                                                        return result or 0
