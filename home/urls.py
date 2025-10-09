@@ -44,4 +44,10 @@ urlpatterns = [
                                  urlpatterns = [
                                      path('api/menu-categories/', MenuCategoryListView.as_view(), name='menu-categories-list'),
                                      ]
-                                     
+
+
+menu_update = MenuItemUpdateViewSet.as_view({'put': 'update'})
+
+urlpatterns = [
+    path('menu/update/<int:pk>/', menu_update, name='menu-update'),
+    ]
