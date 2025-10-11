@@ -1,7 +1,13 @@
 from django.db import models
 from account.models import Customer
 from products.models import Product
+from django.db import models
+class ActiveOrderManager(models.Manager):
+        """Custom manager to filter only active orders (pending or processing)."""
 
+            def get_active_orders(self):
+                    return self.filter(status__in=['pending', 'processing'])
+                    
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
