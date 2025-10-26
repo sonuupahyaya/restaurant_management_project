@@ -9,7 +9,18 @@ from django.conf import settings
 from django.shortcuts import render
 from .models import RestaurantLocation
 from .models import MenuItem, RestaurantLocation
+from rest_framework import generics, permissions
+from django.contrib.auth.models import User
+from .serializers import UserProfileSerializer
 
+class UserProfileUpdateView(generics.UpdateAPIView):
+    serializer_class = UserProfileSerializer
+        permission_classes = [permissions.IsAuthenticated]
+
+            def get_object(self):
+                    # Only allow the logged-in user to update their own data
+                            return self.request.user
+                            
 # restaurant/views.py
 
 
